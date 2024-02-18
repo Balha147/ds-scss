@@ -1,0 +1,49 @@
+$tags: (
+        h1: 42,
+        h2: 36,
+        h3: 28,
+        h4: 22,
+        h5: 18,
+        "body, p, a, form, button": 16,
+        sub: 14,
+        caption: 12,
+);
+
+$titles: (
+        42: (
+                font: $font-size-h1,
+                line: $line-height-titre-gros,
+        ),
+        36: (
+                font: $font-size-h2,
+                line: $line-height-titre-gros,
+        ),
+        28: (
+                font: $font-size-h3,
+                line: $line-height-titre-petit,
+        ),
+        22: (
+                font: $font-size-h4,
+                line: $line-height-titre-petit,
+        ),
+        18: (
+                font: $font-size-h5,
+                line: $line-height-standard,
+        ),
+        16: (
+                font: $font-size-standard,
+                line: $line-height-standard,
+        ),
+        14: (
+                font: $font-size-sub,
+                line: $line-height-titre-petit,
+        ),
+        12: (
+                font: $font-size-form,
+                line: $line-height-form,
+        ),
+        10: (
+                font: $font-size-overline,
+                line: $line-height-overline,
+        ),
+);

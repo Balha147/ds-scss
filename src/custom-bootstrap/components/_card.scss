@@ -1,0 +1,83 @@
+@use '../colors' as color;
+.action-card {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  
+    border-radius: 0.5rem;
+    border: 1px solid color.$gris-light;
+    background-color: color.$white;
+    color: color.$gris-dark;
+  
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow ease 200ms, border-color ease 200ms, background-color ease 200ms, color ease 200ms;
+  
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: color.$box-shadow;
+      color: color.$black;
+  
+      // Required for `<a class="action-card">`
+      text-decoration: none;
+    }
+  
+    &--checked {
+      box-shadow: none !important;
+      border-color: transparent;
+      background-color: color.$bleu-turquoise-light;
+      color: color.$bleu-dark;
+    }
+  
+    &__inner {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding: 24px;
+    }
+  
+    &__tooltip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+    }
+  
+    // Note: the checked icon is only visible when `.card-link--checked` is colorlied.
+    &__checked {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.25rem 0.5rem;
+      color: color.$white;
+      opacity: 0;
+      animation: LinkCardCheckedAnim 200ms ease 200ms forwards;
+    }
+  }
+  
+  @keyframes LinkCardCheckedAnim {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+  }

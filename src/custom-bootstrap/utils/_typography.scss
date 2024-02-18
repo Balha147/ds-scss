@@ -1,0 +1,21 @@
+@import '../mixins/typography';
+@import '../functions/grid';
+@import '../variables/size-text';
+@import '../variables/typography';
+
+@each $tag, $size in $tags {
+    #{$tag} {
+      @include style-text(map-get(map-get($titles, $size), "font"), map-get(map-get($titles, $size), "line"));
+    }
+  }
+  
+  @each $breakpoint in map-keys($grid-breakpoints) {
+      $infix: breakpoint-dynamic($breakpoint, $grid-breakpoints);
+      @media screen and (min-width: #{map-get($grid-breakpoints, $breakpoint)}) {
+        @each $i in map-keys($titles) {
+          .titre#{$infix}-#{$i} {
+            @include style-text(map-get(map-get($titles, $i), "font"), map-get(map-get($titles, $i), "line"));
+          }
+        }
+      }
+  }

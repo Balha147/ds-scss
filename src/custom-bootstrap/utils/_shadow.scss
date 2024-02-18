@@ -1,0 +1,9 @@
+@for $right from 0 through 6 {
+  @for $bottom from 0 through 16 {
+    @each $name, $color in $theme-colors {
+      .shadow-#{$right}-#{$bottom}-#{$name} {
+        box-shadow: 0 ($right * 1px) ($bottom * 1px) 0 rgba($color, 0.3);
+      }
+    }
+  }
+}

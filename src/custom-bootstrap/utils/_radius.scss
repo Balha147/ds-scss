@@ -1,0 +1,28 @@
+@each $i in $radius-number {
+    .radius-#{$i} {
+      @if ($i != 100) {
+        border-radius: ($i * 1px);
+      }
+      @if ($i == 100) {
+        border-radius: 100%;
+      }
+    }
+}
+
+@for $i from 1 through 6 {
+    @each $position in $positions {
+      @each $name, $couleur in $theme-colors {
+        @each $type in $types {
+          @if ($position == all) {
+            .border-#{$position}-#{$i}-#{$type}-#{$name} {
+              border: ($i * 1px) $type $couleur;
+            }
+          } @else {
+            .border-#{$position}-#{$i}-#{$type}-#{$name} {
+              border-#{$position}: ($i * 1px) $type $couleur;
+            }
+          }
+        }
+      }
+    }
+}

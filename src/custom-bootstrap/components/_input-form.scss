@@ -1,0 +1,213 @@
+@use '../colors' as color;
+
+.form-group {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  
+    input.type-form, textarea.type-form {
+      background: color.$gris-background;
+    }
+  
+    .type-form.has-value {
+      background-color: color.$gris-light;
+    }
+
+    .options {
+      position: relative;
+      background: color.$white;
+      border-radius: 5px;
+      width: 100%;
+      z-index: 99;
+      top: 0;
+      padding: 8px 0px 8px 0px;
+      max-height: 310px;
+      overflow: auto;
+      box-shadow: 0 6px 12px 0 rgba(34,34,34,.3);
+      .option {
+        position: relative;
+        padding: 16px;
+         p {
+          color: color.$gris-dark !important;
+          margin: 0;
+        }
+        .line {
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        right: 15px;
+        height: 1px;
+        background-color: color.$gris-light;
+        }
+      }
+    }
+  
+    input,
+    textarea {
+  
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      padding: 20px 15px 5px 15px;
+    }
+  
+    input {
+      min-height: 56px;
+      line-height: 1.9;
+    }
+  
+    textarea {
+      min-height: 100px;
+      resize: none;
+    }
+  
+    .control-label {
+      position: absolute;
+      top: 1rem;
+      left: 1.25rem;
+      pointer-events: none;
+      padding-left: 0.125rem;
+      z-index: 1;
+      color: color.$gris-dark;
+      font-size: 1rem;
+      font-weight: normal;
+      transition: all 0.28s ease;
+    }
+  
+    .bar {
+      position: relative;
+      border-bottom: 0.0625rem solid color.$gris-dark;
+      display: block;
+  
+      &::before {
+        content: "";
+        height: 0.125rem;
+        width: 0;
+        left: 50%;
+        bottom: -0.0625rem;
+        position: absolute;
+        background: color.$bleu;
+        transition: left 0.28s ease, width 0.28s ease;
+        z-index: 2;
+      }
+    }
+  
+    .message-erreur {
+      color: color.$rouge-negatif;
+      font-size: 0.75rem;
+      margin-left: 4px;
+      margin-top: 8px;
+      position: absolute;
+    }
+  
+    .message-aide {
+      color: color.$gris-dark;
+      font-size: 0.75rem;
+      margin-left: 16px;
+      margin-top: 8px;
+      position: absolute;
+    }
+  
+  .icon {
+    position: absolute;
+    right: 15px;
+    transform: translateY(-50%);
+    bottom: 0;
+    margin: auto;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+  
+  .fa-search {
+    color: color.$gris-dark;
+    top: 37%;
+    font-size: 1rem;
+  }
+  
+  .dsicon-check  {
+    top: -7px;
+    font-size: 1.5rem;
+    color: color.$vert-positif;
+  }
+  
+  .dsicon-close {
+    top: -19px;
+    font-size: 2rem;
+    color: color.$rouge-negatif;
+  }
+  
+    .dsicon-close::before {
+      content: "\00d7";
+    }
+  
+    .dsicon-check::before {
+      content: "\2713";
+    }
+  
+    input {
+      line-height: 1.9;
+    }
+  
+    input,
+    textarea {
+      display: block;
+      font-size: 1rem;
+      border-width: 0;
+      border-color: transparent;
+      width: 100%;
+      color: color.$black;
+      transition: all 0.28s ease;
+      box-shadow: none;
+  
+  
+      &.erreur {
+        ~ .control-label {
+          color: color.$rouge-negatif !important;
+          font-size: 0.75rem;
+          top: 0.5rem;
+          left: 0.75rem;
+        }
+        ~ .bar::before {
+          background-color: color.$rouge-negatif !important;
+        }
+         ~ .message-aide {
+          display: none;
+         }
+      }
+  
+      &.valide {
+        ~ .control-label {
+          color: color.$vert-positif !important;
+          font-size: 0.75rem;
+          top: 0.5rem;
+          left: 0.75rem;
+        }
+        ~ .bar::before {
+          background-color: color.$vert-positif;
+        }
+  
+        ~ .message-aide {
+          display: none;
+         }
+      }
+  
+      &.focused,
+      &:focus, &.has-value {
+        outline: none;
+        color: color.$black;
+  
+        ~ .control-label {
+          font-size: 0.75rem;
+          color: color.$bleu;
+          top: 0.5rem;
+          left: 0.75rem;
+        }
+  
+        ~ .bar::before {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+  

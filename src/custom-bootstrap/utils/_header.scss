@@ -1,0 +1,7 @@
+@each $name, $color in $theme-colors {
+    .header-bg-#{$name} {
+        padding: 32px 32px 71px;
+        border-radius: 0 0 50% 50% / 0 0 30px 30px;
+        background-color: $color;
+    }
+}

@@ -1,0 +1,66 @@
+@use '../colors' as color;
+@import '../mixins/switch';
+@import '../colors';
+
+.form-check-input {
+    border: 2px solid #dee2e6;
+}
+
+.input-form-switch {
+    font-size: 2em;
+
+    .form-check-input {
+        position: relative;
+        background-image: none !important;
+        transition: background-color 0.15s ease-in-out;
+        width: 1.625em;
+
+        &:not(:checked) {
+            background-color: color.$gris_light;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0.8em;
+            height: 0.8em;
+            top: 50%;
+            left: 0.1125em;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background-color: color.$white;
+            transition: left 0.15s ease-in-out, transform 0.15s ease-in-out, background-image 0.15s ease-in-out;
+            background-size: 80% 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            @include background-image-check(rgb(99, 99, 99));
+        }
+
+        &:checked::after {
+            left: 0.6em;
+            transform: translateY(-50%);
+            @include background-image-check(rgb(59, 113, 202));
+            
+        }
+
+        &.is-valid::after {
+            @include background-image-check(rgb(30, 112, 0));
+        }
+
+        &.is-invalid::after {
+            @include background-image-times(rgb(204, 0, 0));
+
+        }
+    }
+
+    .form-check-label {
+        position: relative;
+        top: -0.25em;
+        font-size: 0.5em;
+    }
+
+    .message-erreur {
+        color: color.$rouge-negatif;
+        font-size: 0.75rem;
+      }
+}

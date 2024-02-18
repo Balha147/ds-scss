@@ -1,0 +1,33 @@
+{
+  "name": "lib-custom-scss",
+  "version": "1.0.24",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "build": "sass src/custom-bootstrap/custom-bootstrap.scss  src/custom-bootstrap/css/custom-bootstrap.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Balha147/ds-scss.git"
+  },
+  "author": "HEDI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Balha147/ds-scss/issues"
+  },
+  "homepage": "https://github.com/Balha147/ds-scss#readme",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3",
+    "sass": "^1.70.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "dotenv": "^16.4.2"
+  },
+  "bundleDependencies": [
+    "bootstrap"
+  ]
+}

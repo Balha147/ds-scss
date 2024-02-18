@@ -1,0 +1,21 @@
+$primary: #3b71ca;
+$danger: #dc4c64;
+$success: #14a44d;
+$warning: #e4a11b;
+$info: #54b4d3;
+$enable-shadows: true;
+$border-width:0;
+
+
+@import 'colors';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'components/button';
+@import 'components/switch';
+@import 'radius';
+@import 'grid';
+@import 'typography';
+@import 'components/input-form';
+@import 'components/card';
+@import 'utils/opacity';
+@import 'utils/shadow';
+@import 'utils/header';

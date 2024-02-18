@@ -1,0 +1,58 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import 'variables/colors';
+@import 'utils/colors';
+
+$custom-colors: (
+ "green-light": $green-light,
+ "whatsapp-bg": $whatsapp-bg,
+ "stackoverflow-bg" : $stackoverflow-bg,
+ "github-bg": $github-bg,
+ "vk-bg": $vk-bg,
+ "slack-bg": $slack-bg,
+ "instagram-bg": $instagram-bg,
+ "google-bg": $google-bg,
+ "linkedin-bg": $linkedin-bg,
+ "twitter-bg":$twitter-bg,
+ "fb-bg":$fb-bg,
+ "black":$black,
+ "gris-background":$gris-background,
+ "orange-brand": $orange-brand,
+ "orange-dark": $orange-dark,
+ "gris-light": $gris-light,
+ "jaune-ivoire-light": $jaune-ivoire-light,
+ "jaune-ivoire-dark": $jaune-ivoire-dark,
+ "jaune-dark": $jaune-dark,
+ "jaune-light": $jaune-light,
+ "orange": $orange,
+ "orange-brand-dark": $orange-brand-dark,
+ "vert-light": $vert-light, 
+ "vert-dark": $vert-dark,
+ "bleu-turquoise-light": $bleu-turquoise-light,
+ "bleu-turquoise-middle": $bleu-turquoise-middle,
+ "bleu-turquoise-dark": $bleu-turquoise-dark,
+ "bleu-light": $bleu-light,
+ "bleu-dark": $bleu-dark,
+ "bleu-klein-light": $bleu-klein-light,
+ "bleu-klein-dark": $bleu-klein-dark,
+ "bleu-klein-dark-a": $bleu-klein-dark-a,
+ "violet-light": $violet-light,
+ "violet-dark": $violet-dark,
+ "mauve": $mauve,
+ "rose-light": $rose-light,
+ "rose-dark": $rose-dark,
+ "rose-fushia": $rose-fushia,
+ "rouge-framboise": $rouge-framboise,
+ "rose-chair-light": $rose-chair-light,
+ "rose-chair-dark": $rose-chair-dark,
+ "vert-positif": $vert-positif,
+ "rouge-negatif": $rouge-negatif,
+ "bleu": $bleu,
+ "alerte-vert-positif": $alerte-vert-positif,
+ "alerte-rouge-negatif": $alerte-rouge-negatif,
+ "alerte-bleu-information": $alerte-bleu-information,
+ "alerte-jaune-attention": $alerte-jaune-attention,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
